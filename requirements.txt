@@ -1,0 +1,8 @@
+streamlit
+numpy
+Pillow
+pandas
+geopy
+tensorflow
+nominatim
+tensorflow-hub
