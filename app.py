@@ -102,9 +102,8 @@ def about():
     st.title("About Us")
 
     st.write(
-        "1. Welcome to Our Color Detection Application!\n"
-        "2. I am Sourin Mukherjee with my team, dedicated to providing you with accurate distribution and colors of your uploaded image\n"
-        "3. ⚠️THIS WEBSITE IS USED FOR TRAINING AND DEVELOPMENT PURPOSES⚠️"
+        "1. Welcome to Lensify!\n"
+        "2. I am Sourin Mukherjee with my team, dedicated to providing you with accurate name and location of your uploaded image\n"
     )
 
     # Insert an image from a local file
