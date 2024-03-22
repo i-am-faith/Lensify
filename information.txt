@@ -1,1 +1,2 @@
 google maps api add
+add precise location / nearby location (errors)
