@@ -1,3 +1,7 @@
 google maps api add
 add precise location / nearby location (errors)
 contribution done by subhadeep das (2105931)
+Login Page
+Human detection
+Google map integration
+Location error handling
