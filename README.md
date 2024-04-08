@@ -3,6 +3,12 @@
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)                 
 [![Python 3.6](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/downloads/release/python-360/)   
 
+## PC View :- 
+<img src="Images\pcview_lensify.png">
+
+## Mobile View :- 
+<img src="Images\mobileview_lensify.png">
+
 ## Source
 - Trained model [`landmarks_classifier_asia_V1/1`](https://tfhub.dev/google/on_device_vision/classifier/landmarks_classifier_asia_V1/1) is taken from the Tensorflow-Hub
 - There are total `98961` classes supported, in which Asia's most of the famous Landmark is covered.
@@ -30,12 +36,7 @@
   streamlit run app.py
   ```
 
-- For more explanation of this project see the tutorial on Machine Learning Hub YouTube channel.
 
-## PC View :- 
-<img src="Images\pcview_lensify.png">
 
-## Mobile View :- 
-<img src="Images\mobileview_lensify.png">
 
 
