@@ -1,0 +1,234 @@
+import json
+
+def generate_test_cases(json_file):
+    with open(json_file, 'r') as f:
+        data = json.load(f)
+
+    test_cases = []
+    for image in data['images']:
+        test_case = {
+            'id': image['id'],
+            'url': image['url']
+        }
+        test_cases.append(test_case)
+
+    return test_cases
+
+def main():
+    json_file = 'test.json'
+    test_cases = generate_test_cases(json_file)
+
+    print("Generated Test Cases:")
+    for test_case in test_cases:
+        print(f"ID: {test_case['id']}, URL: {test_case['url']}")
+
+if __name__ == "__main__":
+    main()
+
+
+
+{
+    "images": [
+      {
+        "id": 1,
+        "url": "Images/image1.jpg"
+      },
+      {
+        "id": 2,
+        "url": "Images/image2.jpg"
+      },
+      {
+        "id": 3,
+        "url": "Images/image3.jpg"
+      },
+      {
+        "id": 4,
+        "url": "Images/image4.jpg"
+      },
+      {
+        "id": 5,
+        "url": "Images/image5.jpg"
+      },
+      {
+        "id": 6,
+        "url": "Images/image6.jpg"
+      },
+      {
+        "id": 7,
+        "url": "Images/image7.jpg"
+      },
+      {
+        "id": 8,
+        "url": "Images/image8.jpg"
+      },
+      {
+        "id": 9,
+        "url": "Images/image9.jpg"
+      },
+      {
+        "id": 10,
+        "url": "Images/image10.jpg"
+      },
+      {
+        "id": 11,
+        "url": "Images/image11.jpg"
+      },
+      {
+        "id": 12,
+        "url": "Images/image12.jpg"
+      },
+      {
+        "id": 13,
+        "url": "Images/image13.jpg"
+      },
+      {
+        "id": 14,
+        "url": "Images/image14.jpg"
+      },
+      {
+        "id": 15,
+        "url": "Images/image15.jpg"
+      },
+      {
+        "id": 16,
+        "url": "Images/image16.jpg"
+      },
+      {
+        "id": 17,
+        "url": "Images/image17.jpg"
+      },
+      {
+        "id": 18,
+        "url": "Images/image18.jpg"
+      },
+      {
+        "id": 19,
+        "url": "Images/image19.jpg"
+      },
+      {
+        "id": 20,
+        "url": "Images/image20.jpg"
+      },
+      {
+        "id": 21,
+        "url": "Images/image21.jpg"
+      },
+      {
+        "id": 22,
+        "url": "Images/image22.jpg"
+      },
+      {
+        "id": 23,
+        "url": "Images/image23.jpg"
+      },
+      {
+        "id": 24,
+        "url": "Images/image24.jpg"
+      },
+      {
+        "id": 25,
+        "url": "Images/image25.jpg"
+      },
+      {
+        "id": 26,
+        "url": "Images/image26.jpg"
+      },
+      {
+        "id": 27,
+        "url": "Images/image27.jpg"
+      },
+      {
+        "id": 28,
+        "url": "Images/image28.jpg"
+      },
+      {
+        "id": 29,
+        "url": "Images/image29.jpg"
+      },
+      {
+        "id": 30,
+        "url": "Images/image30.jpg"
+      },
+      {
+        "id": 31,
+        "url": "Images/image31.jpg"
+      },
+      {
+        "id": 32,
+        "url": "Images/image32.jpg"
+      },
+      {
+        "id": 33,
+        "url": "Images/image33.jpg"
+      },
+      {
+        "id": 34,
+        "url": "Images/image34.jpg"
+      },
+      {
+        "id": 35,
+        "url": "Images/image35.jpg"
+      },
+      {
+        "id": 36,
+        "url": "Images/image36.jpg"
+      },
+      {
+        "id": 37,
+        "url": "Images/image37.jpg"
+      },
+      {
+        "id": 38,
+        "url": "Images/image38.jpg"
+      },
+      {
+        "id": 39,
+        "url": "Images/image39.jpg"
+      },
+      {
+        "id": 40,
+        "url": "Images/image40.jpg"
+      },
+      {
+        "id": 41,
+        "url": "Images/image41.jpg"
+      },
+      {
+        "id": 42,
+        "url": "Images/image42.jpg"
+      },
+      {
+        "id": 43,
+        "url": "Images/image43.jpg"
+      },
+      {
+        "id": 44,
+        "url": "Images/image44.jpg"
+      },
+      {
+        "id": 45,
+        "url": "Images/image45.jpg"
+      },
+      {
+        "id": 46,
+        "url": "Images/image46.jpg"
+      },
+      {
+        "id": 47,
+        "url": "Images/image47.jpg"
+      },
+      {
+        "id": 48,
+        "url": "Images/image48.jpg"
+      },
+      {
+        "id": 49,
+        "url": "Images/image49.jpg"
+      },
+      {
+        "id": 50,
+        "url": "Images/image50.jpg"
+      }
+    ]
+  }
+  
