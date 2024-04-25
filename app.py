@@ -92,7 +92,25 @@ def home():
                 st.map(df)
 
             except Exception as e:
-                st.warning("No address found!! or Geocode of the location is private")
+
+                # If location not found, try again with the last element of the prediction
+                prediction_elements = prediction.split(", ")
+                new_prediction = prediction_elements[-1] if len(prediction_elements) > 1 else prediction
+                try:
+                    address, latitude, longitude = get_map(new_prediction)
+                    st.success('Address: ' + address)
+                    loc_dict = {'Latitude': latitude, 'Longitude': longitude}
+                    st.subheader('✅ **Latitude & Longitude of ' + new_prediction + '**')
+                    st.json(loc_dict)
+
+                    # Display the location on the map
+                    data = [[latitude, longitude]]
+                    df = pd.DataFrame(data, columns=['lat', 'lon'])
+                    st.subheader('✅ **' + new_prediction + ' on the Map**' + '🗺️')
+                    st.map(df)
+
+                except Exception as e:
+                    st.warning("No address found for the alternative prediction!")
 
         except Exception as e:
             st.error(f"Error occurred: {e}")
