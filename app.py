@@ -20,7 +20,6 @@ def navigation():
 
 # Home page
 def home():
-    st.title("Landmark Recognition")
     local_image_path = "Images/lensify_photo.png"
     st.image(local_image_path, use_column_width=True)
     
