@@ -21,7 +21,7 @@ def navigation():
 # Home page
 def home():
     st.title("Landmark Recognition")
-    local_image_path = "Images/lensify_photo.jpg"
+    local_image_path = "Images/lensify_photo.png"
     st.image(local_image_path, use_column_width=True)
     
     model_url = 'https://tfhub.dev/google/on_device_vision/classifier/landmarks_classifier_asia_V1/1'
