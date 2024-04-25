@@ -20,20 +20,7 @@
 - It will provide you the `Latitude` & `Longitude` of predicted landmark.
 - It will plot the predicted landmark on the Map.
 
-## Usage
 
-- Clone my repository.
-- Open CMD in working directory.
-- Run following command.
-
-  ```
-  pip install -r requirements.txt
-  ```
-- `app.py` is the main Python file of Streamlit Web-Application. 
-- To run app, write following command in CMD. or use any IDE.
-
-  ```
-  streamlit run app.py
   ```
 
 
