@@ -21,8 +21,6 @@
 - It will plot the predicted landmark on the Map.
 
 
-  ```
-
 
 
 
