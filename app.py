@@ -122,7 +122,7 @@ def home():
                 data = [[latitude, longitude]]
                 df = pd.DataFrame(data, columns=['lat', 'lon'])
                 st.subheader('✅ **' + prediction + ' on the Map**' + '🗺️')
-                st.map(df)
+                st.map(df, config={'style': 'mapbox://styles/mapbox/light-v11'})
 
             except Exception as e:
                 # If location not found, try again with the last element of the prediction
