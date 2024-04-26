@@ -9,7 +9,6 @@ from geopy.geocoders import Nominatim
 import requests
 import os
 import google.generativeai as genai
-import creds
 
 # Set page configuration
 st.set_page_config(
@@ -24,7 +23,7 @@ def navigation():
     return selected_page
 
 #define your api key and gemini model
-genai.configure(api_key= creds.GOOGLE_API_KEY)
+genai.configure(api_key= st.secrets["GOOGLE_API_KEY"])
 model = genai.GenerativeModel("gemini-pro")
 chat = model.start_chat(history=[])
 
