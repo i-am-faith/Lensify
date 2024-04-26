@@ -1,3 +1,4 @@
+# Import Libraries 
 import streamlit as st
 import PIL
 import tensorflow as tf
@@ -5,6 +6,10 @@ import tensorflow_hub as hub
 import numpy as np
 import pandas as pd
 from geopy.geocoders import Nominatim
+import requests
+import os
+import google.generativeai as genai
+import creds
 
 # Set page configuration
 st.set_page_config(
@@ -18,6 +23,16 @@ def navigation():
     selected_page = st.sidebar.radio("Navigation", page_options)
     return selected_page
 
+#define your api key and gemini model
+genai.configure(api_key= creds.GOOGLE_API_KEY)
+model = genai.GenerativeModel("gemini-pro")
+chat = model.start_chat(history=[])
+
+def get_gemini_response(question):
+    response = chat.send_message(question,stream=True)
+    return response
+
+
 # Home page
 def home():
     local_image_path = "Images/lensify_photo.png"
@@ -30,6 +45,7 @@ def home():
     df = pd.read_csv(labels_path)
     labels = dict(zip(df.id, df.name))
 
+    # Image Processing Function
     def image_processing(image):
         img_shape = (321, 321)
         classifier = hub.load(model_url)
@@ -49,13 +65,17 @@ def home():
 
         return prediction, img_pil
 
+    # Defining get location function
     def get_map(loc):
-        geolocator = Nominatim(user_agent="Your_Name")
+        geolocator = Nominatim(user_agent="Sourin")
         location = geolocator.geocode(loc)
         return location.address, location.latitude, location.longitude
 
-    # File uploader for image selection
+    # File Upload
     img_file = st.file_uploader("Choose your Image", type=['png', 'jpg'])
+
+    if img_file is None:
+        st.warning("NOTE :- Please Upload Only Landmark Images!")
 
     if img_file is not None:
         try:
@@ -76,6 +96,19 @@ def home():
             st.header("Predicted Landmark is - ")
             st.success(prediction)
 
+            # Button to get AI response
+            input = f"Search for ${prediction}, respond in English with this points\n\n[Significance:\nHistory:\nArchitecture:\nDeities: (if not available then remove)\nFestivals: (if not available then remove)\nPilgrimage:\nCultural Significance:]"
+            submit = st.button("Search For Full Details 🔍")
+
+            if submit and input:
+                response = get_gemini_response(input)
+                full_response = ""
+                for chunk in response:
+                    full_response += chunk.text + " "
+
+                st.success(full_response)
+                
+
             try:
                 # Get location info
                 address, latitude, longitude = get_map(prediction)
@@ -93,7 +126,6 @@ def home():
                 st.map(df)
 
             except Exception as e:
-
                 # If location not found, try again with the last element of the prediction
                 prediction_elements = prediction.split(", ")
                 new_prediction = prediction_elements[-1] if len(prediction_elements) > 1 else prediction
@@ -109,12 +141,22 @@ def home():
                     df = pd.DataFrame(data, columns=['lat', 'lon'])
                     st.subheader('✅ **' + new_prediction + ' on the Map**' + '🗺️')
                     st.map(df)
+                    
 
                 except Exception as e:
                     st.warning("No address found for the alternative prediction!")
 
         except Exception as e:
             st.error(f"Error occurred: {e}")
+
+        # Using the prediction variable in the Google Maps URL
+        location = prediction.replace(" ", "+")  # Replacing spaces with '+' for URL formatting
+
+        # Google Maps Direction
+        directions_url = f"https://www.google.com/maps/dir/?api=1&destination={location}"
+
+        # Displaying the hyperlink in Streamlit
+        st.subheader(f"[Direction to {prediction}]({directions_url})")
 
 # About page
 def about():
@@ -157,7 +199,7 @@ def contact_us():
             st.markdown(f" <style>{f.read()}</style>", unsafe_allow_html=True)
     local_css("style.css")
 
-# Main application logic
+# Navigation
 selected_page = navigation()
 
 if selected_page == "Home":

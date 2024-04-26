@@ -6,3 +6,5 @@ geopy
 tensorflow
 nominatim
 tensorflow-hub
+requests
+google.generativeai

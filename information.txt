@@ -1,6 +1,16 @@
-Google maps api add -> Sourin Mukherjee
-Human detection -> Subhadeep Das
-Confusion Matrix -> Suraj Dey
-Add precise location / nearby location (errors) -> Sourin Mukherjee ✅
+White Box Testing JSON -> Subhadeep Das 
+Confusion Matrix -> Suraj Dey 
+Manual test (result asche kina + Gemini ) - Suraj Dey
 Login Page - Suraj Dey
-Mukesh Sir Add - Sourin Mukherjee ✅
+
+
+Add precise location / nearby location (errors) -> ✅
+Sir Pic Add - ✅
+Gemini add location description - ✅
+Gemini response in English ✅
+Api key hide ✅
+Google Maps Direction Add ✅
+Maptiler maps api add ->
+Note to users - add landmark only -> ✅
+Image Support Exception Handle -> ✅
+warning hatao 

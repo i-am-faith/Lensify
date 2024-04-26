@@ -31,7 +31,8 @@ if __name__ == "__main__":
     "images": [
       {
         "id": 1,
-        "url": "Images/image1.jpg"
+        "url": "Images/image1.jpg",
+        "output": "Taj Mahal"
       },
       {
         "id": 2,
