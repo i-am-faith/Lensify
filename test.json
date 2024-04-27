@@ -32,203 +32,122 @@ if __name__ == "__main__":
       {
         "id": 1,
         "url": "Images/image1.jpg",
-        "output": "Taj Mahal"
+        "output": "Agra Fort",
+        "Error": "No",
       },
       {
         "id": 2,
-        "url": "Images/image2.jpg"
+        "url": "Images/image2.jpg",
+        "output": "Jantar Mantar",
+        "Error": "No",
       },
       {
         "id": 3,
-        "url": "Images/image3.jpg"
+        "url": "Images/image3.jpg",
+        "output": "Qutub Minar Complex",
+        "Error": "No",
       },
       {
         "id": 4,
-        "url": "Images/image4.jpg"
+        "url": "Images/image4.jpg",
+        "output": "Shaolin Temple",
+        "Error": "No",
       },
       {
         "id": 5,
-        "url": "Images/image5.jpg"
+        "url": "Images/image5.jpg",
+        "output": "Taj Mahal",
+        "Error": "No",
       },
       {
         "id": 6,
-        "url": "Images/image6.jpg"
+        "url": "Images/image6.jpg",
+        "output": "Ajanta Caves",
+        "Error": "No",
       },
       {
         "id": 7,
-        "url": "Images/image7.jpg"
+        "url": "Images/image7.jpg",
+        "output": "Red Fort",
+        "Error": "No",
       },
       {
         "id": 8,
-        "url": "Images/image8.jpg"
+        "url": "Images/image8.jpg",
+        "output": "India Gate",
+        "Error": "No",
       },
       {
         "id": 9,
-        "url": "Images/image9.jpg"
+        "url": "Images/image9.jpg",
+        "output": "Tokyo Tower",
+        "Error": "No",
       },
       {
         "id": 10,
-        "url": "Images/image10.jpg"
+        "url": "Images/image10.jpg",
+        "output": "Victoria Memorial",
+        "Error": "No",
       },
       {
         "id": 11,
-        "url": "Images/image11.jpg"
+        "url": "Images/image11.jpg",
+        "output": "Vivekananda House",
+        "Error": "No",
       },
       {
         "id": 12,
-        "url": "Images/image12.jpg"
+        "url": "Images/image12.jpg",
+        "output": "Akal Takht",
+        "Error": "Yes",
       },
       {
         "id": 13,
-        "url": "Images/image13.jpg"
+        "url": "Images/image13.jpg",
+        "output": "Hawa Mahal",
+        "Error": "No",
       },
       {
         "id": 14,
-        "url": "Images/image14.jpg"
+        "url": "Images/image14.jpg",
+        "output": "Gateway Of India Mumbai",
+        "Error": "No",
       },
       {
         "id": 15,
-        "url": "Images/image15.jpg"
+        "url": "Images/image15.jpg",
+        "output": "Great Sphinx of Giza",
+        "Error": "No",
       },
       {
         "id": 16,
-        "url": "Images/image16.jpg"
+        "url": "Images/image16.jpg",
+        "output": "Chand Bawri, Step Well",
+        "Error": "Yes",
       },
       {
         "id": 17,
-        "url": "Images/image17.jpg"
+        "url": "Images/image17.jpg",
+        "output": "Lantau Peak",
+        "Error": "Yes",
       },
       {
         "id": 18,
-        "url": "Images/image18.jpg"
+        "url": "Images/image18.jpg",
+        "output": "Lotus Temple",
+        "Error": "No",
       },
       {
         "id": 19,
-        "url": "Images/image19.jpg"
-      },
+        "url": "Images/image19.jpg",
+        "output": "Bol'shoy Salbykskiy Kurgan",
+        "Error": "Yes",
+      }
       {
         "id": 20,
-        "url": "Images/image20.jpg"
-      },
-      {
-        "id": 21,
-        "url": "Images/image21.jpg"
-      },
-      {
-        "id": 22,
-        "url": "Images/image22.jpg"
-      },
-      {
-        "id": 23,
-        "url": "Images/image23.jpg"
-      },
-      {
-        "id": 24,
-        "url": "Images/image24.jpg"
-      },
-      {
-        "id": 25,
-        "url": "Images/image25.jpg"
-      },
-      {
-        "id": 26,
-        "url": "Images/image26.jpg"
-      },
-      {
-        "id": 27,
-        "url": "Images/image27.jpg"
-      },
-      {
-        "id": 28,
-        "url": "Images/image28.jpg"
-      },
-      {
-        "id": 29,
-        "url": "Images/image29.jpg"
-      },
-      {
-        "id": 30,
-        "url": "Images/image30.jpg"
-      },
-      {
-        "id": 31,
-        "url": "Images/image31.jpg"
-      },
-      {
-        "id": 32,
-        "url": "Images/image32.jpg"
-      },
-      {
-        "id": 33,
-        "url": "Images/image33.jpg"
-      },
-      {
-        "id": 34,
-        "url": "Images/image34.jpg"
-      },
-      {
-        "id": 35,
-        "url": "Images/image35.jpg"
-      },
-      {
-        "id": 36,
-        "url": "Images/image36.jpg"
-      },
-      {
-        "id": 37,
-        "url": "Images/image37.jpg"
-      },
-      {
-        "id": 38,
-        "url": "Images/image38.jpg"
-      },
-      {
-        "id": 39,
-        "url": "Images/image39.jpg"
-      },
-      {
-        "id": 40,
-        "url": "Images/image40.jpg"
-      },
-      {
-        "id": 41,
-        "url": "Images/image41.jpg"
-      },
-      {
-        "id": 42,
-        "url": "Images/image42.jpg"
-      },
-      {
-        "id": 43,
-        "url": "Images/image43.jpg"
-      },
-      {
-        "id": 44,
-        "url": "Images/image44.jpg"
-      },
-      {
-        "id": 45,
-        "url": "Images/image45.jpg"
-      },
-      {
-        "id": 46,
-        "url": "Images/image46.jpg"
-      },
-      {
-        "id": 47,
-        "url": "Images/image47.jpg"
-      },
-      {
-        "id": 48,
-        "url": "Images/image48.jpg"
-      },
-      {
-        "id": 49,
-        "url": "Images/image49.jpg"
-      },
-      {
-        "id": 50,
-        "url": "Images/image50.jpg"
+        "url": "Images/image20.jpg",
+        "output": "All Saints' Cathedral",
+        "Error": "Yes",
       }
     ]
   }

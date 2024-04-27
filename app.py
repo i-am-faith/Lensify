@@ -64,11 +64,24 @@ def home():
 
         return prediction, img_pil
 
-    # Defining get location function
     def get_map(loc):
-        geolocator = Nominatim(user_agent="Sourin")
-        location = geolocator.geocode(loc)
-        return location.address, location.latitude, location.longitude
+        api_key= st.secrets["HERE_API_KEY"]
+        base_url = "https://geocode.search.hereapi.com/v1/geocode"
+        params = {
+            "q": loc,
+            "apiKey": api_key
+        }
+        response = requests.get(base_url, params=params)
+        if response.status_code == 200:
+            data = response.json()
+            if data and "items" in data and len(data["items"]) > 0:
+                first_item = data["items"][0]
+                address = first_item.get("address", {}).get("label", "Unknown")
+                latitude = first_item.get("position", {}).get("lat", None)
+                longitude = first_item.get("position", {}).get("lng", None)
+                return address, latitude, longitude
+        return "Unknown", None, None
+
 
     # File Upload
     img_file = st.file_uploader("Choose your Image", type=['png', 'jpg'])
@@ -122,28 +135,11 @@ def home():
                 data = [[latitude, longitude]]
                 df = pd.DataFrame(data, columns=['lat', 'lon'])
                 st.subheader('✅ **' + prediction + ' on the Map**' + '🗺️')
-                st.map(df, config={'style': 'mapbox://styles/mapbox/light-v11'})
+                st.map(df)
 
+            
             except Exception as e:
-                # If location not found, try again with the last element of the prediction
-                prediction_elements = prediction.split(", ")
-                new_prediction = prediction_elements[-1] if len(prediction_elements) > 1 else prediction
-                try:
-                    address, latitude, longitude = get_map(new_prediction)
-                    st.success('Address: ' + address)
-                    loc_dict = {'Latitude': latitude, 'Longitude': longitude}
-                    st.subheader('✅ **Latitude & Longitude of ' + new_prediction + '**')
-                    st.json(loc_dict)
-
-                    # Display the location on the map
-                    data = [[latitude, longitude]]
-                    df = pd.DataFrame(data, columns=['lat', 'lon'])
-                    st.subheader('✅ **' + new_prediction + ' on the Map**' + '🗺️')
-                    st.map(df)
-                    
-
-                except Exception as e:
-                    st.warning("No address found for the alternative prediction!")
+                st.warning("No address found!! or Geocode of the location is private")
 
         except Exception as e:
             st.error(f"Error occurred: {e}")
