@@ -1,7 +1,7 @@
-White Box Testing JSON -> Subhadeep Das 
+White Box Testing JSON -> Subhadeep Das ❌❌
 Confusion Matrix -> Suraj Dey 
 Manual test (result asche kina + Gemini ) - Suraj Dey
-Login Page - Suraj Dey
+Login Page - Suraj Dey ✅
 
 
 Add precise location / nearby location (errors) -> ✅
@@ -13,4 +13,6 @@ Google Maps Direction Add ✅
 Maptiler maps api add ->
 Note to users - add landmark only -> ✅
 Image Support Exception Handle -> ✅
-warning hatao 
+WAITING FOR CONFIRMATION OF DELETING DUPLICATE AND HERE API KEY ✅
+screenrecord option
+ballon animation - ✅

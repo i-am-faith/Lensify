@@ -122,14 +122,14 @@ if __name__ == "__main__":
       {
         "id": 16,
         "url": "Images/image16.jpg",
-        "output": "Chand Bawri, Step Well",
-        "Error": "Yes",
+        "output": "Harichavank",
+        "Error": "No",
       },
       {
         "id": 17,
         "url": "Images/image17.jpg",
-        "output": "Lantau Peak",
-        "Error": "Yes",
+        "output": "Tomb of Akbar the Great",
+        "Error": "No",
       },
       {
         "id": 18,
@@ -140,14 +140,14 @@ if __name__ == "__main__":
       {
         "id": 19,
         "url": "Images/image19.jpg",
-        "output": "Bol'shoy Salbykskiy Kurgan",
-        "Error": "Yes",
+        "output": "Christ Church, Shimla",
+        "Error": "No",
       }
       {
         "id": 20,
         "url": "Images/image20.jpg",
-        "output": "All Saints' Cathedral",
-        "Error": "Yes",
+        "output": "Shanhua Temple",
+        "Error": "No",
       }
     ]
   }

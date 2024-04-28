@@ -80,7 +80,7 @@ def home():
                 latitude = first_item.get("position", {}).get("lat", None)
                 longitude = first_item.get("position", {}).get("lng", None)
                 return address, latitude, longitude
-        return "Unknown", None, None
+        return "Private Address ⚠️", None, None
 
 
     # File Upload
@@ -91,6 +91,8 @@ def home():
 
     if img_file is not None:
         try:
+            #animation
+            st.balloons()
             # Open and preprocess the uploaded image
             img = PIL.Image.open(img_file)
             img_array = np.array(img)
@@ -125,6 +127,20 @@ def home():
                 # Get location info
                 address, latitude, longitude = get_map(prediction)
                 st.success('Address: ' + address)
+
+                #exception handled
+                if(prediction == "Shaolin Temple"):
+                    address = "GW5P+C4M, Dengfeng Blvd, Deng Feng Shi, Zheng Zhou Shi, He Nan Sheng, China, 471925"
+                    latitude = 34.5086
+                    longitude = 112.9353
+                if(prediction == "Vivekananda House"):
+                    address = "VIVEKANANDA HOUSE, Kamaraj Salai, Marina Beach Road, Triplicane, Chennai, Tamil Nadu 600005"
+                    latitude = 13.0495
+                    longitude = 80.2803
+                if(prediction == "Tomb of Akbar the Great"):
+                    address = "Tomb of Akbar The Great Area, Sikandra, Agra, Uttar Pradesh 282007"
+                    latitude = 27.2206
+                    longitude = 77.9505
 
                 # Display latitude and longitude
                 loc_dict = {'Latitude': latitude, 'Longitude': longitude}
