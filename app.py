@@ -91,8 +91,6 @@ def home():
 
     if img_file is not None:
         try:
-            #animation
-            st.balloons()
             # Open and preprocess the uploaded image
             img = PIL.Image.open(img_file)
             img_array = np.array(img)

@@ -1,18 +1,23 @@
-White Box Testing JSON -> Subhadeep Das ❌❌
-Confusion Matrix -> Suraj Dey 
-Manual test (result asche kina + Gemini ) - Suraj Dey
-Login Page - Suraj Dey ✅
-
-
-Add precise location / nearby location (errors) -> ✅
+Basic :- 
+Login Page - Sourin ✅
+Logo Design - Suraj ✅
+Firebase Add Google/Facebook/Twitter Login - Sourin ✅
 Sir Pic Add - ✅
-Gemini add location description - ✅
-Gemini response in English ✅
-Api key hide ✅
-Google Maps Direction Add ✅
-Maptiler maps api add ->
-Note to users - add landmark only -> ✅
-Image Support Exception Handle -> ✅
-WAITING FOR CONFIRMATION OF DELETING DUPLICATE AND HERE API KEY ✅
-screenrecord option
-ballon animation - ✅
+AI add - Sourin ✅
+AI location description prompt - Suraj ✅
+AI response in English - Suraj✅
+Google Maps Direction Add - Subhadeep ✅
+
+
+
+Errors :- 
+Add precise location / nearby location (errors) - Sourin ✅
+Deleting Duplicate Locations in mobile view - Sourin ✅
+ML Model 1.2X faster and increase accuracy- Subhadeep & Sourin ✅
+
+
+
+Testing :- 
+White Box Testing JSON -> Subhadeep ✅ (Accuracy 95% in white box testing)
+Manual test (Gemini Gesponse) - Suraj ✅
+Location Error Exceptions - Sourin ✅
