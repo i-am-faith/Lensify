@@ -21,3 +21,13 @@ Testing :-
 White Box Testing JSON -> Subhadeep ✅ (Accuracy 95% in white box testing)
 Manual test (Gemini Gesponse) - Suraj ✅
 Location Error Exceptions - Sourin ✅
+----------------------------------------------------------------------------------
+Correlation matrix - Sourin ✅
+Heatmap - Sourin ✅
+COnfusion Matrix - Sourin ✅
+
+
+Output :- 
+images Screenshot -> Suraj
+
+
