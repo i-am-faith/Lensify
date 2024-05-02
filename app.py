@@ -109,7 +109,7 @@ def home():
             st.success(prediction)
 
             # Button to get AI response
-            input = f"Search for ${prediction}, respond in English with this points\n\n[Significance:\nHistory:\nArchitecture:\nDeities: (if not available then remove)\nFestivals: (if not available then remove)\nPilgrimage:\nCultural Significance:]"
+            input = f"Search for ${prediction}, respond in English with this points\n\n[Popularity out of 10(only value):\nVisitor Count of 2023(only value, you can take approximate value):\nAge(only value, you can take approximate value):\nSignificance:\nHistory:\nArchitecture:\nDeities: (if not available then remove)\nFestivals: (if not available then remove)\nPilgrimage:\nCultural Significance:]"
             submit = st.button("Search For Full Details 🔍")
 
             if submit and input:
