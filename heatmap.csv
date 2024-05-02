@@ -1,0 +1,21 @@
+id,Image_URL,Landmark,Popularity,Visitor_Count,Age
+1,Images/image1.jpg,Agra Fort,9,250000,477
+2,Images/image2.jpg,Jantar Mantar,8,500000,290
+3,Images/image3.jpg,Qutub Minar Complex,9,4000000,800
+4,Images/image4.jpg,Shaolin Temple,10,3000000,1500
+5,Images/image5.jpg,Taj Mahal,10,8000000,370
+6,Images/image6.jpg,Ajanta Caves,10,2000000,2000
+7,Images/image7.jpg,Red Fort,8,3000000,400
+8,Images/image8.jpg,India Gate,9,8000000,103
+9,Images/image9.jpg,Tokyo Tower,9,2000000,63
+10,Images/image10.jpg,Victoria Memorial,8,2500000,118
+11,Images/image11.jpg,Vivekananda House,8,500000,100
+12,Images/image12.jpg,Akal Takht,10,2000000,375
+13,Images/image13.jpg,Hawa Mahal,9,2000000,250
+14,Images/image14.jpg,Gateway Of India Mumbai,8,2500000,104
+15,Images/image15.jpg,Great Sphinx of Giza,10,3500000,4600
+16,Images/image16.jpg,Harichavank,6,20000,9000
+17,Images/image17.jpg,Tomb of Akbar the Great,8,1000000,500
+18,Images/image18.jpg,Lotus Temple,9,3500000,46
+19,Images/image19.jpg,Christ Church,9.5,1200000,152
+20,Images/image20.jpg,Shanhua Temple,8,500000,1500
