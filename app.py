@@ -165,7 +165,7 @@ def home():
         directions_url = f"https://www.google.com/maps/dir/?api=1&destination={location}"
 
         # Displaying the hyperlink in Streamlit
-        st.subheader(f"[📌Direction to {address}]({directions_url})")
+        st.subheader(f"[📌Direction to {prediction}]({directions_url})")
 
 # About page
 def about():
