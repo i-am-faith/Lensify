@@ -1,6 +1,6 @@
 Basic :- 
 Login Page - Sourin ✅
-Logo Design - Suraj ✅
+Logo Design - Suraj and Subhadeep ✅
 Firebase Add Google/Facebook/Twitter Login - Sourin ✅
 Sir Pic Add - ✅
 AI add - Sourin ✅
@@ -11,7 +11,7 @@ Google Maps Direction Add - Subhadeep ✅
 
 
 Errors :- 
-Add precise location / nearby location (errors) - Sourin ✅
+Add precise location / nearby location (errors) - Sourin & Subhadeep ✅
 Deleting Duplicate Locations in mobile view - Sourin ✅
 ML Model 1.2X faster and increase accuracy- Subhadeep & Sourin ✅
 
@@ -30,5 +30,8 @@ COnfusion Matrix - Sourin ✅
 Output :- 
 images Screenshot -> Suraj ✅
 
+
+Data Provider :- 
+All CSV file provider -> Subhadeep ✅
 
 
