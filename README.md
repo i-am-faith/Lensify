@@ -22,8 +22,6 @@
 
 ## Testing
 
-## Results Table
-
 | Image                    | Expected Output            | Predicted Output            | Error                    |
 |--------------------------|----------------------------|-----------------------------|--------------------------|
 | <p align="center"><img src="Images/image2.jpg" width="300px"></p> | Jantar Mantar           | Jantar Mantar          | No                  |
