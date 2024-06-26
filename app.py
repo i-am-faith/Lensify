@@ -21,7 +21,7 @@ def navigation():
     return selected_page
 #define your api key and gemini model
 genai.configure(api_key= st.secrets["GOOGLE_API_KEY"])
-model = genai.GenerativeModel("gemini-pro")
+model = genai.GenerativeModel("models/gemini-pro")
 chat = model.start_chat(history=[])
 def get_gemini_response(question):
     response = chat.send_message(question,stream=True)
