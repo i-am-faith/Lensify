@@ -8,3 +8,4 @@ nominatim
 tensorflow-hub
 requests
 google.generativeai
+python==3.7.0
