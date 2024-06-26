@@ -1,4 +1,4 @@
-# Import Libraries
+# Import Libraries 
 import streamlit as st
 import PIL
 import tensorflow as tf
@@ -16,31 +16,27 @@ st.set_page_config(
     page_icon="📷",
 )
 
-# Add logging to debug
-st.write("Starting Lensify App")
-st.write(f"TensorFlow Version: {tf.__version__}")
-st.write(f"PIL Version: {PIL.__version__}")
-
 # Navbar
 def navigation():
     page_options = ["Home", "About", "Contact Us"]
     selected_page = st.sidebar.radio("Navigation", page_options)
     return selected_page
 
-# Define your API key and Gemini model
+#define your api key and gemini model
 genai.configure(api_key= st.secrets["GOOGLE_API_KEY"])
 model = genai.GenerativeModel("gemini-pro")
 chat = model.start_chat(history=[])
 
 def get_gemini_response(question):
-    response = chat.send_message(question, stream=True)
+    response = chat.send_message(question,stream=True)
     return response
+
 
 # Home page
 def home():
     local_image_path = "Images/lensify_photo.png"
     st.image(local_image_path, use_column_width=True)
-
+    
     model_url = 'https://tfhub.dev/google/on_device_vision/classifier/landmarks_classifier_asia_V1/1'
     labels_path = 'landmarks_classifier_asia_V1_label_map.csv'
 
@@ -69,7 +65,7 @@ def home():
         return prediction, img_pil
 
     def get_map(loc):
-        api_key = st.secrets["HERE_API_KEY"]
+        api_key= st.secrets["HERE_API_KEY"]
         base_url = "https://geocode.search.hereapi.com/v1/geocode"
         params = {
             "q": loc,
@@ -85,6 +81,7 @@ def home():
                 longitude = first_item.get("position", {}).get("lng", None)
                 return address, latitude, longitude
         return "Private Address ⚠️", None, None
+
 
     # File Upload
     img_file = st.file_uploader("Choose your Image", type=['png', 'jpg'])
@@ -122,22 +119,23 @@ def home():
                     full_response += chunk.text + " "
 
                 st.success(full_response)
+                
 
             try:
                 # Get location info
                 address, latitude, longitude = get_map(prediction)
                 st.success('Address: ' + address)
 
-                # Exception handled
-                if prediction == "Shaolin Temple":
+                #exception handled
+                if(prediction == "Shaolin Temple"):
                     address = "GW5P+C4M, Dengfeng Blvd, Deng Feng Shi, Zheng Zhou Shi, He Nan Sheng, China, 471925"
                     latitude = 34.5086
                     longitude = 112.9353
-                elif prediction == "Vivekananda House":
+                elif(prediction == "Vivekananda House"):
                     address = "VIVEKANANDA HOUSE, Kamaraj Salai, Marina Beach Road, Triplicane, Chennai, Tamil Nadu 600005"
                     latitude = 13.0495
                     longitude = 80.2803
-                elif prediction == "Tomb of Akbar the Great":
+                elif(prediction == "Tomb of Akbar the Great"):
                     address = "Tomb of Akbar The Great Area, Sikandra, Agra, Uttar Pradesh 282007"
                     latitude = 27.2206
                     longitude = 77.9505
@@ -153,6 +151,7 @@ def home():
                 st.subheader('✅ **' + prediction + ' on the Map**' + '🗺️')
                 st.map(df)
 
+            
             except Exception as e:
                 st.warning("No address found!! or Geocode of the location is private")
 
@@ -178,6 +177,7 @@ def about():
     )
 
     # Insert an image from a local file
+
     sir_image = "Images/sir_image.png"
     st.image(sir_image, use_column_width=True)
     team_image = "Images/team.png"
@@ -201,10 +201,11 @@ def contact_us():
     """
     st.markdown(contact_form, unsafe_allow_html=True)
 
+
     # Use Local CSS File
     def local_css(file_name):
         with open(file_name) as f:
-            st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+            st.markdown(f" <style>{f.read()}</style>", unsafe_allow_html=True)
     local_css("style.css")
 
 # Navigation
