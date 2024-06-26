@@ -28,7 +28,7 @@ def navigation():
     return selected_page
 
 # Define your API key and Gemini model
-genai.configure(api_key="AIzaSyDO5g3stBUU4B3sQAHjJMAEr_sR2H9-5yA")
+genai.configure(api_key= st.secrets["GOOGLE_API_KEY"])
 model = genai.GenerativeModel("gemini-pro")
 chat = model.start_chat(history=[])
 
@@ -69,7 +69,7 @@ def home():
         return prediction, img_pil
 
     def get_map(loc):
-        api_key = "_DSM5HGoABfdT7ICjJifphYVI15_ecL1dfzTi1OMiGw"
+        api_key = st.secrets["HERE_API_KEY"]
         base_url = "https://geocode.search.hereapi.com/v1/geocode"
         params = {
             "q": loc,
