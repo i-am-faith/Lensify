@@ -3,7 +3,7 @@ numpy
 Pillow
 pandas
 geopy
-tensorflow==2.8.0
+tensorflow==2.15.1
 tensorflow-hub==0.12.0
 nominatim
 requests
