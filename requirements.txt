@@ -6,5 +6,5 @@ numpy
 pandas
 geopy
 requests
-google-cloud-vision
+google-generativeai
 protobuf
