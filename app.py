@@ -22,40 +22,40 @@ def navigation():
         """
         <div style="text-align: center;">
             <h1>Lensify</h1>
+        </div>
         """,
         unsafe_allow_html=True,
     )
-    
     
     page_options = ["Home", "About", "Contact Us"]
     selected_page = st.sidebar.radio("Navigation", page_options)
     
     # Add social media icons with hyperlinks in the same line
     st.sidebar.markdown("---")
-    st.sidebar.markdown(
-        """
-        <div style="text-align: center;">
-            <h2>Connect with Us</h2>
-            <div style="display: flex; justify-content: center;">
-                <a href="https://www.facebook.com/demo" target="_blank" style="margin: 0 10px;">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" width="25">
-                </a>
-                <a href="https://www.instagram.com/demo" target="_blank" style="margin: 0 10px;">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" width="25">
-                </a>
-                <a href="https://github.com/demo" target="_blank" style="margin: 0 10px;">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" width="25">
-                </a>
-                <a href="https://www.linkedin.com/in/demo" target="_blank" style="margin: 0 10px;">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" width="25">
-                </a>
+    st.sidebar.caption(
+    "Built by [Sourin Mukherjee](https://github.com/i-am-faith). Like this? [Hire me!](mailto:sourin.mukherjee2580@gmail.com)"
+    )
+    facebook = "https://user-images.githubusercontent.com/74038190/235294010-ec412ef5-e3da-4efa-b1d4-0ab4d4638755.gif"
+    instagram = "https://user-images.githubusercontent.com/74038190/235294013-a33e5c43-a01c-43f6-b44d-a406d8b4ab75.gif"
+    linkedin = "https://user-images.githubusercontent.com/74038190/235294012-0a55e343-37ad-4b0f-924f-c8431d9d2483.gif"
+    twitter = "https://user-images.githubusercontent.com/74038190/235294011-b8074c31-9097-4a65-a594-4151b58743a8.gif"
+
+    st.sidebar.caption(
+        f"""
+            <div style='display: flex; align-items: center;'>
+                <a href = 'https://www.facebook.com/sourin.mukherjee833'><img src='{facebook}' style='width: 50px; height: 50px; margin-right: 25px;'></a>
+                <a href = 'https://www.instagram.com/i_am_faith_007/'><img src='{instagram}' style='width: 48px; height: 48px; margin-right: 25px;'></a>
+                <a href = 'https://www.linkedin.com/in/sourin-mukherjee2105833/'><img src='{linkedin}' style='width: 48px; height: 48px; margin-right: 25px;'></a>
+                <a href = "https://x.com/i_am_faith_007"><img src='{twitter}' style='width: 48px; height: 48px; margin-right: 25px;'></a>
+            
             </div>
-        </div>
+
         """,
         unsafe_allow_html=True,
     )
     
     return selected_page
+
 
 #define your api key and gemini model
 # genai.configure(api_key= st.secrets["GOOGLE_API_KEY"])
@@ -229,6 +229,10 @@ def contact_us():
             st.markdown(f" <style>{f.read()}</style>", unsafe_allow_html=True)
     local_css("style.css")
 # Navigation
+
+
+
+
 selected_page = navigation()
 if selected_page == "Home":
     home()
