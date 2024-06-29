@@ -9,30 +9,90 @@ from geopy.geocoders import Nominatim
 import requests
 import os
 import google.generativeai as genai
-# Set page configuration
+
 st.set_page_config(
     page_title="Lensify",
     page_icon="📷",
 )
 # Navbar
 def navigation():
+    # Add custom GIF and app name in the same line
+    st.sidebar.image("Images/lensify_final.gif", use_column_width=True)
+    st.sidebar.markdown(
+        """
+        <div style="text-align: center;">
+            <h1>Lensify</h1>
+        """,
+        unsafe_allow_html=True,
+    )
+    
+    
     page_options = ["Home", "About", "Contact Us"]
     selected_page = st.sidebar.radio("Navigation", page_options)
+    
+    # Add social media icons with hyperlinks in the same line
+    st.sidebar.markdown("---")
+    st.sidebar.markdown(
+        """
+        <div style="text-align: center;">
+            <h2>Connect with Us</h2>
+            <div style="display: flex; justify-content: center;">
+                <a href="https://www.facebook.com/demo" target="_blank" style="margin: 0 10px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" width="25">
+                </a>
+                <a href="https://www.instagram.com/demo" target="_blank" style="margin: 0 10px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" width="25">
+                </a>
+                <a href="https://github.com/demo" target="_blank" style="margin: 0 10px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" width="25">
+                </a>
+                <a href="https://www.linkedin.com/in/demo" target="_blank" style="margin: 0 10px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" width="25">
+                </a>
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+    
     return selected_page
+
 #define your api key and gemini model
-genai.configure(api_key= st.secrets["GOOGLE_API_KEY"])
+# genai.configure(api_key= st.secrets["GOOGLE_API_KEY"])
+genai.configure(api_key= "AIzaSyDO5g3stBUU4B3sQAHjJMAEr_sR2H9-5yA")
 model = genai.GenerativeModel("models/gemini-pro")
 chat = model.start_chat(history=[])
 def get_gemini_response(question):
     response = chat.send_message(question,stream=True)
     return response
+
 # Home page
 def home():
     local_image_path = "Images/lensify_photo.png"
     st.image(local_image_path, use_column_width=True)
+    st.write("Choose Your Continent")
+    continent_options = ["Asia", "Africa", "North America", "South America", "Europe", "Oceania & Antarctica"]
+    selected_continent = st.selectbox("", continent_options)
+    if selected_continent == "Asia":
+        model_url = 'https://tfhub.dev/google/on_device_vision/classifier/landmarks_classifier_asia_V1/1'
+        labels_path = 'Data/landmarks_classifier_asia_V1_label_map.csv'
+    elif selected_continent == "Africa":
+        model_url = 'https://tfhub.dev/google/on_device_vision/classifier/landmarks_classifier_africa_V1/1'
+        labels_path = 'Data/landmarks_classifier_africa_V1_label_map.csv'
+    elif selected_continent == "North America":
+        model_url = 'https://tfhub.dev/google/on_device_vision/classifier/landmarks_classifier_north_america_V1/1'
+        labels_path = 'Data/landmarks_classifier_north_america_V1_label_map.csv'
+    elif selected_continent == "South America":
+        model_url = 'https://tfhub.dev/google/on_device_vision/classifier/landmarks_classifier_south_america_V1/1'
+        labels_path = 'Data/landmarks_classifier_south_america_V1_label_map.csv'
+    elif selected_continent == "Europe":
+        model_url = 'https://tfhub.dev/google/on_device_vision/classifier/landmarks_classifier_europe_V1/1'
+        labels_path = 'Data/landmarks_classifier_europe_V1_label_map.csv'
+    elif selected_continent == "Oceania & Antartica":
+        model_url = 'https://tfhub.dev/google/on_device_vision/classifier/landmarks_classifier_oceania_antarctica_V1/1'
+        labels_path = 'Data/landmarks_classifier_oceania_antarctica_V1_label_map.csv'
     
-    model_url = 'https://tfhub.dev/google/on_device_vision/classifier/landmarks_classifier_asia_V1/1'
-    labels_path = 'landmarks_classifier_asia_V1_label_map.csv'
+
     # Load labels
     df = pd.read_csv(labels_path)
     labels = dict(zip(df.id, df.name))
@@ -51,7 +111,8 @@ def home():
         img_pil = PIL.Image.fromarray((image * 255).astype(np.uint8))
         return prediction, img_pil
     def get_map(loc):
-        api_key= st.secrets["HERE_API_KEY"]
+        # api_key= st.secrets["HERE_API_KEY"]
+        api_key= "_DSM5HGoABfdT7ICjJifphYVI15_ecL1dfzTi1OMiGw"
         base_url = "https://geocode.search.hereapi.com/v1/geocode"
         params = {
             "q": loc,
@@ -99,7 +160,6 @@ def home():
             try:
                 # Get location info
                 address, latitude, longitude = get_map(prediction)
-                st.success('Address: ' + address)
                 #exception handled
                 if(prediction == "Shaolin Temple"):
                     address = "GW5P+C4M, Dengfeng Blvd, Deng Feng Shi, Zheng Zhou Shi, He Nan Sheng, China, 471925"
@@ -113,6 +173,7 @@ def home():
                     address = "Tomb of Akbar The Great Area, Sikandra, Agra, Uttar Pradesh 282007"
                     latitude = 27.2206
                     longitude = 77.9505
+                st.success('Address: ' + address)
                 # Display latitude and longitude
                 loc_dict = {'Latitude': latitude, 'Longitude': longitude}
                 st.subheader('✅ **Latitude & Longitude of ' + prediction + '**')
