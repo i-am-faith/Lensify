@@ -33,7 +33,7 @@ def navigation():
     # Add social media icons with hyperlinks in the same line
     st.sidebar.markdown("---")
     st.sidebar.caption(
-    "Built by [Sourin Mukherjee](https://github.com/i-am-faith). Like this? [Hire me!](mailto:sourin.mukherjee2580@gmail.com)"
+    "Built by [Lensify Team](https://subhagittu.github.io/Animated-About-Us-Page). Like this? [Hire me!](mailto:sourin.mukherjee2580@gmail.com)"
     )
     facebook = "https://user-images.githubusercontent.com/74038190/235294010-ec412ef5-e3da-4efa-b1d4-0ab4d4638755.gif"
     instagram = "https://user-images.githubusercontent.com/74038190/235294013-a33e5c43-a01c-43f6-b44d-a406d8b4ab75.gif"
