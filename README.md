@@ -4,10 +4,10 @@
 [![Python 3.6](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/downloads/release/python-360/)   
 
 ## PC View :- 
-<img src="Images\pcview_lensify.png">
+<img src="Images/lensify_site_preview.png">
 
 ## Mobile View :- 
-<img src="Images\mobileview_lensify.png">
+<img src="Images/lensify_mobile.png">
 
 ## Source
 - Trained model [`landmarks_classifier_asia_V1/1`](https://tfhub.dev/google/on_device_vision/classifier/landmarks_classifier_asia_V1/1) is taken from the Tensorflow-Hub
