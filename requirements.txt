@@ -2,6 +2,7 @@ streamlit
 pillow
 tensorflow
 tensorflow-hub
+keras
 numpy
 pandas
 geopy
