@@ -28,3 +28,5 @@
 | <p align="center"><img src="Images/image5.jpg" width="300px"></p> | Taj Mahal           | Taj Mahal          | No                 | 
 | <p align="center"><img src="Images/image10.jpg" width="350px"></p> | Victoria Memorial           | Victoria Memorial          | No                 |
 
+## LICENSE
+<a href="LICENSE">LICENSE & REGISTRATION</a>
