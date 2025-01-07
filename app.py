@@ -18,7 +18,7 @@ st.set_page_config(
 # Navbar
 def navigation():
     # Add custom GIF and app name in the same line
-    st.sidebar.image("Images/lensify_final.gif", use_column_width=True)
+    st.sidebar.image("Images/lensify_final.gif", use_container_width=True)
     st.sidebar.markdown(
         """
         <div style="text-align: center;">
@@ -69,7 +69,7 @@ def get_gemini_response(question):
 # Home page
 def home():
     local_image_path = "Images/lensify_photo.png"
-    st.image(local_image_path, use_column_width=True)
+    st.image(local_image_path, use_container_width=True)
     st.write("Choose Your Continent")
     continent_options = ["Asia", "Africa", "North America", "South America", "Europe", "Oceania & Antarctica"]
     selected_continent = st.selectbox("", continent_options)
@@ -100,8 +100,11 @@ def home():
     def image_processing(image):
         img_shape = (321, 321)
         classifier = hub.load(model_url)
-        # Extract the specific signature we need
         signature = classifier.signatures['default']
+        # Convert to RGB if image has 4 channels (e.g., RGBA)
+        if image.shape[-1] == 4:
+            image = PIL.Image.fromarray(image).convert("RGB")
+            image = np.array(image)
         # Resize and normalize image
         img = tf.image.resize(image, img_shape) / 255.0
         # Predict
@@ -141,9 +144,9 @@ def home():
             # Display the uploaded image and the processed image side by side
             col1, col2 = st.columns(2)
             with col1:
-                st.image(img_file, caption='Uploaded Image', use_column_width=True)
+                st.image(img_file, caption='Uploaded Image', use_container_width=True)
             with col2:
-                st.image(img_copy, caption='Processed Image', use_column_width=True)
+                st.image(img_copy, caption='Processed Image', use_container_width=True)
             st.header("Predicted Landmark is - ")
             st.success(prediction)
             # Button to get AI response
@@ -159,6 +162,10 @@ def home():
             try:
                 # Get location info
                 address, latitude, longitude = get_map(prediction)
+                if not address:
+                    address = "Unknown Address"
+                if not latitude or not longitude:
+                    st.warning("Unable to fetch latitude and longitude.")
                 #exception handled
                 if(prediction == "Shaolin Temple"):
                     address = "GW5P+C4M, Dengfeng Blvd, Deng Feng Shi, Zheng Zhou Shi, He Nan Sheng, China, 471925"
@@ -204,9 +211,9 @@ def about():
     )
     # Insert an image from a local file
     sir_image = "Images/sir_image.png"
-    st.image(sir_image, use_column_width=True)
+    st.image(sir_image, use_container_width=True)
     team_image = "Images/team.png"
-    st.image(team_image, use_column_width=True)
+    st.image(team_image, use_container_width=True)
     st.success("Thank you for choosing our Weather App!")
 # Contact Us page
 def contact_us():
