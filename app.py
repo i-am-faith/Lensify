@@ -162,10 +162,6 @@ def home():
             try:
                 # Get location info
                 address, latitude, longitude = get_map(prediction)
-                if not address:
-                    address = "Unknown Address"
-                if not latitude or not longitude:
-                    st.warning("Unable to fetch latitude and longitude.")
                 #exception handled
                 if(prediction == "Shaolin Temple"):
                     address = "GW5P+C4M, Dengfeng Blvd, Deng Feng Shi, Zheng Zhou Shi, He Nan Sheng, China, 471925"
